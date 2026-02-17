@@ -83,6 +83,10 @@ export const SOURCE_TIERS: Record<string, number> = {
   'BBC Persian': 2,
   'Iran International': 3,
   'Fars News': 3,
+  'Anadolu Agency': 1,
+  'TRT World': 2,
+  'Daily Sabah': 3,
+  'Hürriyet Daily News': 3,
   'MIIT (China)': 1,
   'MOFCOM (China)': 1,
 
@@ -239,12 +243,15 @@ export const SOURCE_TYPES: Record<string, SourceType> = {
   'CSIS': 'intel', 'RAND': 'intel', 'Brookings': 'intel', 'Carnegie': 'intel',
   'IAEA': 'gov', 'WHO': 'gov', 'UNHCR': 'gov',
   'Xinhua': 'wire', 'TASS': 'wire',
+  'Anadolu Agency': 'wire',
 
   // Mainstream outlets
   'BBC World': 'mainstream', 'BBC Middle East': 'mainstream',
   'Guardian World': 'mainstream', 'Guardian ME': 'mainstream',
   'NPR News': 'mainstream', 'Al Jazeera': 'mainstream',
   'CNN World': 'mainstream', 'Politico': 'mainstream',
+  'TRT World': 'mainstream', 'Daily Sabah': 'mainstream',
+  'Hürriyet Daily News': 'mainstream',
 
   // Market/Finance
   'CNBC': 'market', 'MarketWatch': 'market', 'Yahoo Finance': 'market',
@@ -313,16 +320,19 @@ export const SOURCE_PROPAGANDA_RISK: Record<string, SourceRiskProfile> = {
   'CGTN': { risk: 'high', stateAffiliated: 'China', note: 'Chinese state broadcaster' },
   'Press TV': { risk: 'high', stateAffiliated: 'Iran', note: 'Iranian state media' },
   'KCNA': { risk: 'high', stateAffiliated: 'North Korea', note: 'North Korean state media' },
+  'Anadolu Agency': { risk: 'high', stateAffiliated: 'Turkey', note: 'Turkish state news agency' },
 
   // Medium risk - State-affiliated or known bias
   'Al Jazeera': { risk: 'medium', stateAffiliated: 'Qatar', note: 'Qatari state-funded, independent editorial' },
   'Al Arabiya': { risk: 'medium', stateAffiliated: 'Saudi Arabia', note: 'Saudi-owned, reflects Gulf perspective' },
   'TRT World': { risk: 'medium', stateAffiliated: 'Turkey', note: 'Turkish state broadcaster' },
+  'Daily Sabah': { risk: 'medium', stateAffiliated: 'Turkey', note: 'Pro-government Turkish outlet' },
   'France 24': { risk: 'medium', stateAffiliated: 'France', note: 'French state-funded, editorially independent' },
   'DW News': { risk: 'medium', stateAffiliated: 'Germany', note: 'German state-funded, editorially independent' },
   'Voice of America': { risk: 'medium', stateAffiliated: 'USA', note: 'US government-funded' },
   'Kyiv Independent': { risk: 'medium', knownBiases: ['Pro-Ukraine'], note: 'Ukrainian perspective on Russia-Ukraine war' },
   'Moscow Times': { risk: 'medium', knownBiases: ['Anti-Kremlin'], note: 'Independent, critical of Russian government' },
+  'Hürriyet Daily News': { risk: 'medium', note: 'Turkish outlet, opposition-leaning' },
 
   // Low risk - Independent with editorial standards (explicit)
   'Reuters': { risk: 'low', note: 'Wire service, strict editorial standards' },
@@ -362,6 +372,12 @@ const FULL_FEEDS: Record<string, Feed[]> = {
     // Arab News and Times of Israel removed — 403 from cloud IPs
     { name: 'Guardian ME', url: rss('https://www.theguardian.com/world/middleeast/rss') },
     { name: 'CNN World', url: rss('http://rss.cnn.com/rss/cnn_world.rss') },
+    // Turkish sources
+    { name: 'TRT World', url: rss('https://www.trtworld.com/rss') },
+    { name: 'Anadolu Agency', url: rss('https://news.google.com/rss/search?q=site:aa.com.tr+when:2d&hl=en-US&gl=US&ceid=US:en') },
+    { name: 'Daily Sabah', url: rss('https://news.google.com/rss/search?q=site:dailysabah.com+when:2d&hl=en-US&gl=US&ceid=US:en') },
+    { name: 'Hürriyet Daily News', url: rss('https://news.google.com/rss/search?q=site:hurriyetdailynews.com+when:2d&hl=en-US&gl=US&ceid=US:en') },
+    // Iranian sources
     { name: 'BBC Persian', url: rss('http://feeds.bbci.co.uk/persian/tv-and-radio-37434376/rss.xml') },
     { name: 'Iran International', url: rss('https://news.google.com/rss/search?q=site:iranintl.com+when:2d&hl=en-US&gl=US&ceid=US:en') },
     { name: 'Fars News', url: rss('https://news.google.com/rss/search?q=site:farsnews.ir+when:2d&hl=en-US&gl=US&ceid=US:en') },

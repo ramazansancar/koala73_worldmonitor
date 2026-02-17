@@ -95,6 +95,14 @@ export const SOURCE_TIERS: Record<string, number> = {
   'Habertürk': 3,
   'Milliyet': 3,
   'Sözcü': 3,
+  'Webrazzi': 3,
+  'ShiftDelete.Net': 3,
+  'Donanım Haber': 3,
+  'Teknoloji.org': 3,
+  'Chip Online': 3,
+  'Log': 3,
+  'Tamindir': 3,
+  'Tekno Blog': 3,
   'MIIT (China)': 1,
   'MOFCOM (China)': 1,
 
@@ -263,6 +271,9 @@ export const SOURCE_TYPES: Record<string, SourceType> = {
   'BBC Türkçe': 'mainstream', 'NTV': 'mainstream', 'CNN Türk': 'mainstream',
   'Hürriyet': 'mainstream', 'Sabah': 'mainstream', 'Habertürk': 'mainstream',
   'Milliyet': 'mainstream', 'Sözcü': 'mainstream',
+  'Webrazzi': 'tech', 'ShiftDelete.Net': 'tech', 'Donanım Haber': 'tech',
+  'Teknoloji.org': 'tech', 'Chip Online': 'tech', 'Log': 'tech',
+  'Tamindir': 'tech', 'Tekno Blog': 'tech',
 
   // Market/Finance
   'CNBC': 'market', 'MarketWatch': 'market', 'Yahoo Finance': 'market',
@@ -410,6 +421,15 @@ const FULL_FEEDS: Record<string, Feed[]> = {
     { name: 'Ars Technica', url: rss('https://feeds.arstechnica.com/arstechnica/technology-lab') },
     { name: 'The Verge', url: rss('https://www.theverge.com/rss/index.xml') },
     { name: 'MIT Tech Review', url: rss('https://www.technologyreview.com/feed/') },
+    // Turkish tech sources
+    { name: 'Webrazzi', url: rss('https://webrazzi.com/feed/') },
+    { name: 'ShiftDelete.Net', url: rss('https://shiftdelete.net/feed') },
+    { name: 'Donanım Haber', url: rss('https://www.donanimhaber.com/rss.xml') },
+    { name: 'Teknoloji.org', url: rss('https://www.teknoloji.org/feed/') },
+    { name: 'Chip Online', url: rss('https://www.chip.com.tr/rss/haberler.xml') },
+    { name: 'Log', url: rss('https://log.com.tr/feed/') },
+    { name: 'Tamindir', url: rss('https://www.tamindir.com/rss/') },
+    { name: 'Tekno Blog', url: rss('https://www.teknoblog.com/feed/') },
   ],
   ai: [
     { name: 'AI News', url: rss('https://news.google.com/rss/search?q=(OpenAI+OR+Anthropic+OR+Google+AI+OR+"large+language+model"+OR+ChatGPT)+when:2d&hl=en-US&gl=US&ceid=US:en') },
@@ -518,6 +538,15 @@ const TECH_FEEDS: Record<string, Feed[]> = {
     { name: 'TechMeme', url: rss('https://www.techmeme.com/feed.xml') },
     { name: 'Engadget', url: rss('https://www.engadget.com/rss.xml') },
     { name: 'Fast Company', url: rss('https://feeds.feedburner.com/fastcompany/headlines') },
+    // Turkish tech sources
+    { name: 'Webrazzi', url: rss('https://webrazzi.com/feed/') },
+    { name: 'ShiftDelete.Net', url: rss('https://shiftdelete.net/feed') },
+    { name: 'Donanım Haber', url: rss('https://www.donanimhaber.com/rss.xml') },
+    { name: 'Teknoloji.org', url: rss('https://www.teknoloji.org/feed/') },
+    { name: 'Chip Online', url: rss('https://www.chip.com.tr/rss/haberler.xml') },
+    { name: 'Log', url: rss('https://log.com.tr/feed/') },
+    { name: 'Tamindir', url: rss('https://www.tamindir.com/rss/') },
+    { name: 'Tekno Blog', url: rss('https://www.teknoblog.com/feed/') },
   ],
   ai: [
     { name: 'AI News', url: rss('https://news.google.com/rss/search?q=(OpenAI+OR+Anthropic+OR+Google+AI+OR+"large+language+model"+OR+ChatGPT+OR+Claude+OR+"AI+model")+when:2d&hl=en-US&gl=US&ceid=US:en') },
